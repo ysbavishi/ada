@@ -8,7 +8,7 @@ const FileUpload = () => {
     <div className='file_uploader'>
        <header>
         <h3>Upload and attach files</h3>
-        <IconX stroke={2} size={20} />
+        <IconX stroke={2} size={20} color={'#f2ce72'} />
         </header>
        <FileBrowser />
        <div className='metadata'>

@@ -15,11 +15,11 @@
 
 a {
   font-weight: 400;
-  color: #646cff;
+  color: #f2ce72;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #f2ce72;
 }
 
 body {
@@ -42,12 +42,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #2b2a2a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  color: #f2ce72;
 }
 button:focus,
 button:focus-visible {
@@ -60,7 +60,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+  color: #f2ce72;
   }
   button {
     background-color: #f9f9f9;
@@ -71,6 +71,11 @@ button:focus-visible {
   background-color: #202126;
   padding: 1rem 2.0rem ;
   border-radius: 1.25rem;
+}
+
+.file_uploader > header > h3 {
+  color: #f2ce72;
+  font-weight: 800;
 }
 
 .file_uploader > header {
@@ -96,14 +101,60 @@ button:focus-visible {
 }
 
 .file_uploader-file_previewer {
-  border: 1px solid white;
+  border: 2px solid white;
+  border-radius: 1rem;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem 0.5rem;
+  gap: 10.9rem;
+  margin-top: 0.75rem;
 }
 
-.file_uploader-file_previewer > div {
+.file_details_grid  {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.75rem;
 }
 
-.file_uploader-file_previewer > .file_details_grid {
+.file_details_grid > div {
   display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.file_details_grid > div > p{
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #f2ce72;
+  margin: 0;
+}
+.file_details_grid > div > div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.file_details_grid > div > div > p{
+  margin: 0;
+  font-weight: 600;
+}
+
+.file_uploader-operations {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.file_uploader-btns {
+  margin-top: 1.8rem;
+  justify-self: end;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.metadata > p {
+  font-weight: 100;
+  font-size: 0.85rem;
 }

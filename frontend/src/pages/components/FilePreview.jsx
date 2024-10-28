@@ -5,18 +5,18 @@ const FilePreview = () => {
   return (
     <div className='file_uploader-file_previewer'>
         <div className='file_details_grid'>
-        <IconFileTypePdf stroke={2} />
-        <div className='file_details'>
-            <p>File Name will come here</p>
+          <IconFileTypePdf stroke={2} size={40} color={'#f2ce72'}/>
             <div>
-                <p>File Size will come here</p>
-                <IconAsteriskSimple stroke={1} size={15} />
-                <p>Uploading Status</p>
+              <p>{'test.png'.toUpperCase()}</p>
+              <div>
+                  <p>25</p>
+                  <IconAsteriskSimple stroke={1} size={15} />
+                  <p style={{'color': '#2bc265'}}>Successful</p>
+              </div>
             </div>
         </div>
-        </div>
-        <div>
-            <IconEye stroke={2} />
+        <div className='file_uploader-operations'>
+            <IconEye stroke={2} color={'#19b2e0'}/>
             <IconX stroke={2} color='red' />
         </div>
 
