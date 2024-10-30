@@ -16,6 +16,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.venv 
 
 # IDE and editor files
 .idea/
@@ -30,3 +31,5 @@ yarn-error.log*
 *.tgz
 *.gz
 *.zip
+
+__pycache__/
