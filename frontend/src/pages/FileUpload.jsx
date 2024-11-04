@@ -17,6 +17,16 @@ const FileUpload = () => {
     })
   }
 
+  const uploadMultipleFile = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    pdfs.forEach(ele => formData.append("files", ele))
+    fetch("http://localhost:8000/api/uploadMultipleFile", {
+      method: 'POST',
+      body: formData,
+    })
+  }
+
   return (
     <div className='file_uploader'>
        <header>
@@ -34,7 +44,7 @@ const FileUpload = () => {
        {/* <FilePreview /> */}
        <div className='file_uploader-btns'>
         <button>Cancel</button>
-        <button onClick={(e) => uploadSingleFile(e)}>Upload</button>
+        <button onClick={(e) => uploadMultipleFile(e)}>Upload</button>
        </div>
     </div>
   )
