@@ -10,8 +10,6 @@ class LoggingMiddleWare:
     async def __call__(self, request: Request, call_next) :
         self.logger.info(f"{datetime.datetime.now()} Request sent at " + str(request.url)  + " " + str(request.method))
         request.state.logger = self.logger
-        print(request.url)
-        print(request.headers)
         response: Response = await call_next(request)
         self.logger.info(f"{datetime.datetime.now()} Response received at " + str(response.status_code))
         return response
