@@ -1,13 +1,13 @@
 import React from 'react'
 import { IconFileTypePdf, IconX, IconEye, IconAsteriskSimple} from '@tabler/icons-react';
 
-const FilePreview = () => {
+const FilePreview = (props) => {
   return (
     <div className='file_uploader-file_previewer'>
         <div className='file_details_grid'>
           <IconFileTypePdf stroke={2} size={40} color={'#f2ce72'}/>
             <div>
-              <p>{'test.png'.toUpperCase()}</p>
+              <p>{props.name.toUpperCase()}</p>
               <div>
                   <p>25</p>
                   <IconAsteriskSimple stroke={1} size={15} />

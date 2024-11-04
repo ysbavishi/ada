@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
-import { IconPaperclip } from '@tabler/icons-react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react'
+import  { IconPaperclip } from '@tabler/icons-react/';
+import { usePdfStore } from '../../stores/pdfStore';
 
 const FileBrowser = () => {
 
   const [files, setFiles] = useState(null);
   const [isDragging, setIsDraggin] = useState(false);
-
+  const pdfs = usePdfStore((state) => state.pdfs);
   const handleDragEnter = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setIsDraggin(true)
   }
 
@@ -20,16 +20,11 @@ const FileBrowser = () => {
     e.preventDefault()
   }
 
+  const addPdfsToStore = usePdfStore((state) => state.addPdfs);
   const handleChange = (e) => {
     e.preventDefault();
-    console.log("test", e.dataTransfer.files[0])
-    setFiles(e.dataTransfer.files[0])
+    addPdfsToStore(e.dataTransfer.files[0])
   }
-
-  useEffect(() => {
-      console.log(files)
-  }, [files])
-
 
   return (
     <div className='file_uploader-file_browser' 

@@ -1,9 +1,22 @@
 import React from 'react'
 import FileBrowser from './components/FileBrowser'
 import FilePreview from './components/FilePreview'
-import {IconX} from '@tabler/icons-react'
+import  { IconX } from '@tabler/icons-react'
+import { usePdfStore } from '../stores/pdfStore';
 
 const FileUpload = () => {
+  const pdfs = usePdfStore((state) => state.pdfs);
+
+  const uploadSingleFile = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", pdfs[0]);
+    fetch("http://localhost:8000/api/uploadSingleFile", {
+      method: 'POST',
+      body: formData,
+    })
+  }
+
   return (
     <div className='file_uploader'>
        <header>
@@ -15,10 +28,13 @@ const FileUpload = () => {
         <p>Supported Formats: PDF</p>
         <p>Maximum size: 20MB</p>
        </div>
-       <FilePreview />
+       {
+        pdfs.map((pdf, index) => <FilePreview key={index} name={pdf.name} />)
+       }
+       {/* <FilePreview /> */}
        <div className='file_uploader-btns'>
         <button>Cancel</button>
-        <button>Upload</button>
+        <button onClick={(e) => uploadSingleFile(e)}>Upload</button>
        </div>
     </div>
   )
