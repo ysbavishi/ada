@@ -25,15 +25,10 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
 button {
   border-radius: 8px;
@@ -68,17 +63,27 @@ button:focus-visible {
 }
 
 .file_uploader  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.file_upload_wrapper {
   background-color: #202126;
   padding: 1rem 2.0rem ;
   border-radius: 1.25rem;
+  justify-self: center;
+  align-self: center;
 }
 
-.file_uploader > header > h3 {
+.file_upload_wrapper > header > h3 {
   color: #f2ce72;
   font-weight: 800;
 }
 
-.file_uploader > header {
+.file_upload_wrapper > header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,7 +100,7 @@ button:focus-visible {
   border-radius: 1.5rem;
 }
 
-.file_uploader > .metadata {
+.file_upload_wrapper > .metadata {
   display: flex;
   justify-content: space-between;
 }
@@ -157,4 +162,54 @@ button:focus-visible {
 .metadata > p {
   font-weight: 100;
   font-size: 0.85rem;
+}
+
+.file_viewer {
+  text-align: start;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.file_viewer-tab_container {
+  background-color: #202126;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  width: 200px; 
+  background-color: #2b2a2a;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding: 5px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.tabs > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  gap: 50px;
+}
+
+.file_viewer-hero {
+  width: 100vw;
+  display: flex;
+  height: 100%;
+}
+
+.file_viewer-hero > iframe {
+  border: none;
+  width: 50%;
+}
+
+.file_viewer-hero > p {
+  border: none;
+  width: 50%;
 }
